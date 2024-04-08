@@ -75,7 +75,7 @@ describe("Given I am connected as an employee", () => {
 
     test("Then I select a date and it should display the date in the date input", async () => {
       const inputDate = screen.getByTestId("datepicker");
-      userEvent.type(inputDate, "2023-03-22");
+      fireEvent.change(inputDate, { target: { value: "2023-03-22" } });
       await expect(inputDate.value).toBe("2023-03-22");
     });
 
